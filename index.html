@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tornería Daniel | Mecanizado, Tornería y Servicios Industriales</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0f0fe',
+                            500: '#0284c7',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#0f2b5c',
+                            dark: '#0a192f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PDF.js library for high-grade PDF rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+        
+        .blue-gradient {
+            background: linear-gradient(135deg, #0f2b5c 0%, #1e40af 50%, #2563eb 100%);
+        }
+        
+        .blue-gradient-soft {
+            background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+        }
+
+        .industrial-grid {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-800 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-900 text-slate-100 text-xs sm:text-sm py-2 px-4 border-b border-brand-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-clock text-blue-400"></i> Lunes a Viernes: 9-12 hs y 13-18:30 hs
+                </span>
+                <span class="hidden md:inline-block text-slate-500">|</span>
+                <span class="hidden md:flex items-center gap-1.5 text-slate-300">
+                    <i class="fa-solid fa-gears text-blue-400"></i> Soluciones Especializadas para la Industria & Sector Petrolero
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/5492974763196" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition flex items-center gap-1 font-semibold">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i> +54 9 2974 76 3196
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo Branding -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-800 text-white flex items-center justify-center shadow-md group-hover:bg-brand-700 transition-colors">
+                        <i class="fa-solid fa-gear text-2xl group-hover:rotate-45 transition-transform duration-500"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-brand-900 block leading-tight">
+                            TORNERÍA DANIEL
+                        </span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 block">
+                            Mecanizado & Soluciones Industriales
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                    <a href="#inicio" class="hover:text-brand-800 transition py-1 border-b-2 border-transparent hover:border-brand-800">Inicio</a>
+                    <a href="#empresa" class="hover:text-brand-800 transition py-1 border-b-2 border-transparent hover:border-brand-800">La Empresa</a>
+                    <a href="#servicios" class="hover:text-brand-800 transition py-1 border-b-2 border-transparent hover:border-brand-800">Servicios</a>
+                    <a href="#catalogo" class="hover:text-brand-800 transition py-1 border-b-2 border-transparent hover:border-brand-800 flex items-center gap-1">
+                        <i class="fa-solid fa-file-pdf text-red-500"></i> Catálogo PDF
+                    </a>
+                    <a href="#contacto" class="hover:text-brand-800 transition py-1 border-b-2 border-transparent hover:border-brand-800">Ubicación y Contacto</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="#presupuesto" class="bg-brand-800 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator"></i> Presupuesto
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-700 hover:text-brand-800 p-2 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 text-slate-700 font-semibold hover:text-brand-800">Inicio</a>
+            <a href="#empresa" class="mobile-link block py-2 text-slate-700 font-semibold hover:text-brand-800">La Empresa</a>
+            <a href="#servicios" class="mobile-link block py-2 text-slate-700 font-semibold hover:text-brand-800">Servicios</a>
+            <a href="#catalogo" class="mobile-link block py-2 text-slate-700 font-semibold hover:text-brand-800 flex items-center gap-2">
+                <i class="fa-solid fa-file-pdf text-red-500"></i> Catálogo PDF / Documentos
+            </a>
+            <a href="#contacto" class="mobile-link block py-2 text-slate-700 font-semibold hover:text-brand-800">Ubicación y Contacto</a>
+            <a href="#presupuesto" class="mobile-link block text-center bg-brand-800 text-white font-semibold py-2.5 rounded-lg shadow">
+                Solicitar Cotización Online
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section id="inicio" class="relative blue-gradient text-white py-16 lg:py-24 overflow-hidden">
+            <!-- Decorative background elements -->
+            <div class="absolute inset-0 opacity-10 industrial-grid pointer-events-none"></div>
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-400 filter blur-3xl opacity-20 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-blue-100 border border-white/20">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Servicio Industrial de Alta Calidad & Rapidez
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                            Mecanizado de Precisión y Tornería Especializada
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-200 max-w-2xl font-light">
+                            Fabricación de piezas a medida, reparación de componentes e ingeniería de soluciones para el sector industrial y petrolero. Respuesta rápida, seria y confiable.
+                        </p>
+
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="https://wa.me/5492974763196?text=Hola%20Torner%C3%ADa%20Daniel,%20necesito%20consultar%20por%20un%20trabajo%20de%20mecanizado." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-emerald-500/30 transition flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Consulta Inmediata WhatsApp</span>
+                            </a>
+                            <a href="#catalogo" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf text-red-300"></i>
+                                <span>Ver Catálogo PDF</span>
+                            </a>
+                        </div>
+
+                        <!-- Quick Badges -->
+                        <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <span class="block text-2xl font-extrabold text-white">100%</span>
+                                <span class="text-xs text-blue-200 uppercase font-medium">Garantía de Calidad</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-extrabold text-white">Según Plano</span>
+                                <span class="text-xs text-blue-200 uppercase font-medium">o Muestra de Pieza</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-extrabold text-white">Petrolero</span>
+                                <span class="text-xs text-blue-200 uppercase font-medium">& Agro-Industrial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white text-slate-800 p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-100 relative">
+                            <div class="absolute -top-3 -right-3 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                                Atendido por profesionales
+                            </div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-14 h-14 bg-brand-50 rounded-xl flex items-center justify-center text-brand-800">
+                                    <i class="fa-solid fa-industry text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-brand-900">Tornería Daniel PyME</h3>
+                                    <p class="text-xs text-slate-500">Mecanizado & Reparación en Comodoro</p>
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3.5 text-sm text-slate-700 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-brand-600 text-base mt-0.5"></i>
+                                    <span>Fabricación de repuestos industriales y bujes especiales.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-brand-600 text-base mt-0.5"></i>
+                                    <span>Mantenimiento para equipos de bombeo e industria pesada.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-brand-600 text-base mt-0.5"></i>
+                                    <span>Cumplimiento estricto en los plazos de entrega pactados.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-brand-600 text-base mt-0.5"></i>
+                                    <span>Atención personalizada tanto a empresas como a particulares.</span>
+                                </li>
+                            </ul>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-clock text-brand-800 text-xl"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-500 uppercase">Horario Comercial</p>
+                                        <p class="text-xs font-semibold text-slate-800">Lun-Vie 9-12 / 13-18:30 hs</p>
+                                    </div>
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+                                    Disponible
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LA EMPRESA -->
+        <section id="empresa" class="py-16 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 text-sm font-bold tracking-wider uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+                        Nuestra Trayectoria
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-900 mt-3">
+                        LA EMPRESA
+                    </h2>
+                    <div class="w-16 h-1 bg-brand-800 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+                    
+                    <!-- Main Text Box with text strictly as requested -->
+                    <div class="lg:col-span-8 bg-slate-50 rounded-2xl p-8 sm:p-10 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="w-3 h-8 bg-brand-800 rounded-full"></span>
+                                <h3 class="text-xl font-bold text-brand-900">Compromiso y Soluciones de Mecanizado</h3>
+                            </div>
+                            
+                            <!-- Textual description requested by user -->
+                            <p class="text-slate-700 leading-relaxed text-base sm:text-lg font-normal text-justify">
+                                Tornería Daniel es una PyME dedicada a la prestación de servicios de tornería, mecanizado y fabricación de piezas a medida, según plano o muestra, para empresas y clientes particulares. Con amplia experiencia en el sector, ofrecemos soluciones rápidas, confiables y de alta calidad, adaptadas a las necesidades de cada proyecto. Trabajamos especialmente para la industria, incluyendo el sector petrolero, brindando servicios de mecanizado, reparación y mantenimiento de componentes. Nuestro compromiso es garantizar la máxima calidad de cada trabajo, optimizar los procesos de nuestros clientes y cumplir con los plazos de entrega acordados, destacándonos por la seriedad, la responsabilidad y la atención personalizada.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-slate-200 grid sm:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-800 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-700">Seriedad & Responsabilidad</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-microscope text-brand-800 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-700">Máxima Precision</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-truck-fast text-brand-800 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-700">Entrega a Tiempo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Sidebar / Hours Card -->
+                    <div class="lg:col-span-4 flex flex-col justify-between gap-6">
+                        
+                        <!-- Horarios de Atencion Card -->
+                        <div class="bg-brand-900 text-white rounded-2xl p-6 shadow-md relative overflow-hidden flex-1 flex flex-col justify-between">
+                            <div class="absolute -right-8 -bottom-8 opacity-10 text-white">
+                                <i class="fa-solid fa-clock text-9xl"></i>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white">
+                                        <i class="fa-solid fa-business-time text-lg"></i>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-white">Horarios de Atención</h4>
+                                </div>
+
+                                <p class="text-sm text-slate-300 mb-6">
+                                    Visítenos en nuestro taller o contáctenos en nuestro horario habitual de trabajo:
+                                </p>
+
+                                <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/10 space-y-3">
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="font-medium text-blue-200">Días:</span>
+                                        <span class="font-bold text-white">Lunes a Viernes</span>
+                                    </div>
+                                    <hr class="border-white/10">
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="font-medium text-blue-200">Mañana:</span>
+                                        <span class="font-bold text-white">9:00 a 12:00 hs</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span class="font-medium text-blue-200">Tarde:</span>
+                                        <span class="font-bold text-white">13:00 a 18:30 hs</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-4 border-t border-white/10 text-xs text-blue-200 text-center">
+                                <i class="fa-solid fa-circle-info mr-1"></i> Atención Telefónica y Presencial
+                            </div>
+                        </div>
+
+                        <!-- Petrolero Specialty Badge -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-800 text-white flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-oil-well"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-brand-900">Especialistas Petroleros</h5>
+                                <p class="text-xs text-slate-600">Servicios adaptados a los altos requerimientos del rubro hidrocarburífero.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: SERVICIOS PRINCIPALES -->
+        <section id="servicios" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-600 text-sm font-bold tracking-wider uppercase bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+                        Especialidades
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-900 mt-3">
+                        NUESTROS SERVICIOS
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Soluciones metalmecánicas adaptadas con precisión para cada requerimiento
+                    </p>
+                    <div class="w-16 h-1 bg-brand-800 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Service Card 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-800 group-hover:bg-brand-800 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-gear"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-900 mb-3">
+                                Tornería & Mecanizado de Precisión
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Trabajos de torneado, fresado y ajuste fino con estándares exigentes para garantizar la máxima funcionalidad dimensional.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-4 border-t border-slate-100 font-medium">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Torneado convencional
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Roscados especiales
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Bujeado y alesado
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-800 group-hover:bg-brand-800 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-oil-well"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-900 mb-3">
+                                Industria Petrolera & Especializada
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Mecanizado de componentes críticos para equipos en pozo y superficie, respondiendo con agilidad a emergencias operativas.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-4 border-t border-slate-100 font-medium">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Piezas para perforación
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Bridas y acoples mecánicos
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Válvulas y conexiones
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-800 group-hover:bg-brand-800 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-drafting-compass"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-900 mb-3">
+                                Fabricación Según Plano o Muestra
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Replicamos e ideamos piezas según planos técnicos o muestras desgastadas, optimizando tolerancias para prolongar su vida útil.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-4 border-t border-slate-100 font-medium">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Levantamiento de cotas
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Diversos materiales y aceros
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Prototipos y lotes a medida
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-800 group-hover:bg-brand-800 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-900 mb-3">
+                                Reparación & Mantenimiento
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Recuperación de ejes, rectificado de zonas desgastadas, embujados y reconstrucción integral de componentes mecánicos.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-2 pt-4 border-t border-slate-100 font-medium">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Recuperación de roscas
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Reconstrucción de alojamientos
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-600"></i> Mantenimiento preventivo
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: VISOR DE PDF Y CATÁLOGO DE SERVICIOS -->
+        <section id="catalogo" class="py-16 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="text-brand-600 text-sm font-bold tracking-wider uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+                        Documentación & Fichas Técnicas
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-900 mt-3">
+                        VISOR DE CATÁLOGO / PDF
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Examine nuestro catálogo corporativo de presentación o cargue un plano/documento local para previsualizarlo.
+                    </p>
+                    <div class="w-16 h-1 bg-brand-800 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- PDF Viewer Container -->
+                <div class="bg-slate-900 rounded-2xl shadow-2xl border border-slate-800 overflow-hidden">
+                    
+                    <!-- PDF Toolbar -->
+                    <div class="bg-slate-800 px-4 py-3 border-b border-slate-700 flex flex-wrap items-center justify-between gap-3 text-white text-sm">
+                        <div class="flex items-center space-x-3">
+                            <span class="flex items-center gap-2 font-semibold text-xs sm:text-sm text-slate-200">
+                                <i class="fa-solid fa-file-pdf text-red-500 text-lg"></i>
+                                <span id="pdf-doc-title">Catalogo_Torneria_Daniel.pdf</span>
+                            </span>
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="flex items-center space-x-2">
+                            <button id="prev-page" class="bg-slate-700 hover:bg-slate-600 p-2 rounded-lg text-xs font-semibold transition" title="Página Anterior">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <span class="text-xs text-slate-300 font-mono">
+                                Pag <span id="page-num">1</span> de <span id="page-count">1</span>
+                            </span>
+                            <button id="next-page" class="bg-slate-700 hover:bg-slate-600 p-2 rounded-lg text-xs font-semibold transition" title="Página Siguiente">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                            
+                            <span class="text-slate-600">|</span>
+
+                            <button id="zoom-out" class="bg-slate-700 hover:bg-slate-600 p-2 rounded-lg text-xs transition" title="Reducir Zoom">
+                                <i class="fa-solid fa-magnifying-glass-minus"></i>
+                            </button>
+                            <span id="zoom-percent" class="text-xs text-slate-300 font-mono">100%</span>
+                            <button id="zoom-in" class="bg-slate-700 hover:bg-slate-600 p-2 rounded-lg text-xs transition" title="Aumentar Zoom">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Action Controls -->
+                        <div class="flex items-center space-x-2">
+                            <label for="pdf-upload" class="bg-brand-700 hover:bg-brand-600 text-white text-xs font-semibold px-3 py-2 rounded-lg cursor-pointer transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-upload"></i>
+                                <span>Cargar PDF Local</span>
+                            </label>
+                            <input type="file" id="pdf-upload" accept="application/pdf" class="hidden">
+
+                            <a id="download-pdf-btn" href="#" download="Catalogo_Torneria_Daniel.pdf" class="bg-slate-700 hover:bg-slate-600 text-white text-xs font-semibold px-3 py-2 rounded-lg transition flex items-center gap-1.5" title="Descargar PDF">
+                                <i class="fa-solid fa-download"></i>
+                                <span class="hidden sm:inline">Descargar</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Canvas / Display Area -->
+                    <div class="p-4 sm:p-8 bg-slate-950 flex justify-center items-center min-h-[500px] overflow-auto relative">
+                        <canvas id="pdf-canvas" class="max-w-full shadow-2xl rounded border border-slate-800"></canvas>
+                        
+                        <!-- Fallback / Loading Overlay -->
+                        <div id="pdf-loader" class="hidden absolute inset-0 bg-slate-950/80 backdrop-blur-sm flex flex-col items-center justify-center text-white space-y-3">
+                            <i class="fa-solid fa-circle-notch fa-spin text-3xl text-brand-500"></i>
+                            <p class="text-sm font-medium">Cargando documento PDF...</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 px-6 py-3 border-t border-slate-800 text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-2">
+                        <span>💡 Puede previsualizar nuestro brochure corporativo o subir su propio plano PDF para adjuntarlo en su consulta.</span>
+                        <span class="text-brand-400 font-medium">Tornería Daniel - Chubut, Argentina</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: PRESUPUESTO ONLINE -->
+        <section id="presupuesto" class="py-16 lg:py-24 blue-gradient-soft border-t border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10 lg:p-12">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="text-brand-600 text-xs font-bold tracking-wider uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+                            Cotizaciones Rápidas
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-brand-900 mt-2">
+                            SOLICITUD DE PRESUPUESTO ONLINE
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-2">
+                            Complete los datos de la pieza o trabajo que necesita realizar y reciba nuestra propuesta a la brevedad.
+                        </p>
+                    </div>
+
+                    <form id="quote-form" onsubmit="event.preventDefault(); sendQuoteWhatsApp();" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2" for="nombre">Nombre / Empresa *</label>
+                                <input type="text" id="nombre" required placeholder="Ej: Roberto Gómez / YPF Servicio" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none text-sm transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2" for="telefono">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="telefono" required placeholder="Ej: 2974123456" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none text-sm transition">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2" for="tipo-servicio">Tipo de Trabajo</label>
+                                <select id="tipo-servicio" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none text-sm transition">
+                                    <option value="Mecanizado de Pieza a Medida">Mecanizado de Pieza a Medida</option>
+                                    <option value="Fabricación según Plano o Muestra">Fabricación según Plano o Muestra</option>
+                                    <option value="Reparación / Mantenimiento">Reparación / Mantenimiento Componente</option>
+                                    <option value="Servicio Industria Petrolera">Servicio Industria Petrolera</option>
+                                    <option value="Otra Consulta Técnica">Otra Consulta Técnica</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2" for="plazo">Urgencia / Plazo Estimado</label>
+                                <select id="plazo" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none text-sm transition">
+                                    <option value="Normal">Normal (Según disponibilidad)</option>
+                                    <option value="Urgente (Servicio en Parada)">Urgente (Parada de planta/pozo)</option>
+                                    <option value="Consulta de Cotización">Solo consulta previa</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2" for="detalles">Detalle del Trabajo o Pieza (Medidas, Material, Cantidad) *</label>
+                            <textarea id="detalles" rows="4" required placeholder="Describa el material (acero, bronce, teflón, etc.), dimensiones aproximadas, o si cuenta con plano..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-800 focus:outline-none text-sm transition"></textarea>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-500 flex items-center gap-1.5">
+                                <i class="fa-solid fa-lock text-brand-800"></i> Sus datos son tratados con estricta confidencialidad.
+                            </span>
+
+                            <button type="submit" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Enviar Cotización por WhatsApp</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACTO & UBICACIÓN -->
+        <section id="contacto" class="py-16 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-600 text-sm font-bold tracking-wider uppercase bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+                        Canales Directos
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-900 mt-3">
+                        CONTACTO Y UBICACIÓN
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Consúltenos por vías digitales o visite nuestro taller comercial
+                    </p>
+                    <div class="w-16 h-1 bg-brand-800 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10">
+                    
+                    <!-- Contact Cards -->
+                    <div class="lg:col-span-5 space-y-6">
+                        
+                        <!-- WhatsApp Direct Card -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-emerald-300 transition group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-2xl flex-shrink-0 shadow-md">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Atención Inmediata</span>
+                                    <h3 class="text-lg font-bold text-slate-900">WhatsApp Oficial</h3>
+                                    <p class="text-sm font-mono text-slate-700 mt-1">+54 9 2974 76 3196</p>
+                                    <a href="https://wa.me/5492974763196" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 hover:text-emerald-800 mt-3">
+                                        <span>Iniciar Chat de WhatsApp</span>
+                                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Direct Card -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-brand-300 transition group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-800 text-white flex items-center justify-center text-xl flex-shrink-0 shadow-md">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Correo Electrónico</span>
+                                    <h3 class="text-lg font-bold text-slate-900">Email Corporativo</h3>
+                                    <p class="text-sm font-mono text-slate-700 mt-1 truncate">silvaguillermo1305@gmail.com</p>
+                                    <a href="mailto:silvaguillermo1305@gmail.com" class="inline-flex items-center gap-2 text-xs font-bold text-brand-800 hover:text-brand-900 mt-3">
+                                        <span>Enviar un Correo</span>
+                                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hours Summary Card -->
+                        <div class="bg-brand-900 text-white border border-brand-800 rounded-2xl p-6 shadow-sm">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fa-solid fa-clock text-blue-400 text-lg"></i>
+                                <h4 class="font-bold text-sm">Horario de Atención Presencial y Telefónica</h4>
+                            </div>
+                            <p class="text-sm text-slate-200 font-medium">
+                                Lunes a Viernes: <span class="text-white font-bold">9:00 a 12:00 hs</span> y <span class="text-white font-bold">13:00 a 18:30 hs</span>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Map Container -->
+                    <div class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                                <div>
+                                    <h3 class="text-lg font-bold text-brand-900 flex items-center gap-2">
+                                        <i class="fa-solid fa-location-dot text-red-500"></i> Ubicación del Taller
+                                    </h3>
+                                    <p class="text-xs text-slate-500">Acceda fácilmente con navegación GPS</p>
+                                </div>
+
+                                <a href="https://maps.app.goo.gl/1sFbfKmBsqqjqA9FA" target="_blank" rel="noopener noreferrer" class="bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-2 shadow">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                    <span>Abrir en Google Maps</span>
+                                </a>
+                            </div>
+
+                            <!-- Interactive Embedded Map Representation -->
+                            <div class="relative w-full h-80 rounded-xl overflow-hidden border border-slate-300 shadow-inner bg-slate-200">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.243555986877!2d-67.4988888!3d-45.865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDUxJzE4LjAiUyA2N8KwMjknNTYuMCJX!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+                                    class="w-full h-full border-0" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Ubicación Tornería Daniel">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
+                            <span>📍 Enlace directo verificado a las instalaciones de Tornería Daniel.</span>
+                            <a href="https://maps.app.goo.gl/1sFbfKmBsqqjqA9FA" target="_blank" class="text-brand-800 font-bold hover:underline">
+                                https://maps.app.goo.gl/1sFbfKmBsqqjqA9FA
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-8 mb-8">
+                
+                <div class="md:col-span-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-800 text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <span class="text-xl font-black text-white tracking-wider">TORNERÍA DANIEL</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-md leading-relaxed">
+                        Servicios de tornería, mecanizado y fabricación de piezas a medida para empresas y particulares. Especialistas en el sector industrial y petrolero.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#empresa" class="hover:text-white transition">La Empresa</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition">Servicios</a></li>
+                        <li><a href="#catalogo" class="hover:text-white transition">Catálogo PDF</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Contactos Directos</h4>
+                    <div class="text-xs space-y-2">
+                        <p class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> +54 9 2974 76 3196
+                        </p>
+                        <p class="flex items-center gap-2 truncate">
+                            <i class="fa-solid fa-envelope text-blue-400"></i> silvaguillermo1305@gmail.com
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-slate-400"></i> Lun - Vie: 9-12 / 13-18:30 hs
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>© <span id="year">2026</span> Tornería Daniel. Todos los derechos reservados.</p>
+                <p class="text-slate-500">Mecanizado & Soluciones Industriales de Calidad</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Box (replaces alert) -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <span id="toast-message" class="text-sm font-medium">Mensaje enviado</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Dynamic Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toast Notification System
+        function showToast(msg, isSuccess = true) {
+            const toast = document.getElementById('toast-notification');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = msg;
+            toastIcon.className = isSuccess 
+                ? "fa-solid fa-circle-check text-emerald-400 text-xl" 
+                : "fa-solid fa-circle-exclamation text-amber-400 text-xl";
+
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 4000);
+        }
+
+        // Quote Request via WhatsApp Generator
+        function sendQuoteWhatsApp() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const servicio = document.getElementById('tipo-servicio').value;
+            const plazo = document.getElementById('plazo').value;
+            const detalles = document.getElementById('detalles').value.trim();
+
+            if (!nombre || !telefono || !detalles) {
+                showToast("Por favor complete los campos obligatorios.", false);
+                return;
+            }
+
+            const text = `*SOLICITUD DE PRESUPUESTO - TORNERÍA DANIEL*\n\n` +
+                         `👤 *Cliente/Empresa:* ${nombre}\n` +
+                         `📞 *Teléfono:* ${telefono}\n` +
+                         `🛠️ *Servicio:* ${servicio}\n` +
+                         `⏱️ *Urgencia:* ${plazo}\n` +
+                         `📝 *Detalles de la pieza:* ${detalles}\n\n` +
+                         `_Enviado desde la página web oficial._`;
+
+            const encodedText = encodeURIComponent(text);
+            const waUrl = `https://wa.me/5492974763196?text=${encodedText}`;
+
+            showToast("Redirigiendo a WhatsApp con los datos de su cotización...");
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+            }, 800);
+        }
+
+        // ==========================================
+        // PDF VISOR INTERACTIVO & RENDERER (PDF.JS)
+        // ==========================================
+        
+        // Initialize PDF.js worker
+        if (window['pdfjs-dist/build/pdf']) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageRendering = false,
+            pageNumPending = null,
+            scale = 1.2,
+            canvas = document.getElementById('pdf-canvas'),
+            ctx = canvas.getContext('2d'),
+            loader = document.getElementById('pdf-loader');
+
+        // Render standard page
+        function renderPage(num) {
+            pageRendering = true;
+            if (loader) loader.classList.remove('hidden');
+
+            if (!pdfDoc) {
+                // If no real PDF is loaded yet, draw an aesthetic fallback canvas
+                renderFallbackCanvas();
+                pageRendering = false;
+                if (loader) loader.classList.add('hidden');
+                return;
+            }
+
+            pdfDoc.getPage(num).then(function(page) {
+                const viewport = page.getViewport({ scale: scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                const renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (loader) loader.classList.add('hidden');
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            }).catch(err => {
+                console.error("PDF Render Error:", err);
+                renderFallbackCanvas();
+                if (loader) loader.classList.add('hidden');
+            });
+
+            document.getElementById('page-num').textContent = num;
+            document.getElementById('zoom-percent').textContent = Math.round(scale * 100) + '%';
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function onPrevPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+
+        function onNextPage() {
+            if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+
+        document.getElementById('prev-page').addEventListener('click', onPrevPage);
+        document.getElementById('next-page').addEventListener('click', onNextPage);
+
+        document.getElementById('zoom-in').addEventListener('click', () => {
+            scale += 0.2;
+            queueRenderPage(pageNum);
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', () => {
+            if (scale <= 0.6) return;
+            scale -= 0.2;
+            queueRenderPage(pageNum);
+        });
+
+        // User Custom PDF File Upload Logic
+        document.getElementById('pdf-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type === "application/pdf") {
+                const fileReader = new FileReader();
+                if (loader) loader.classList.remove('hidden');
+
+                fileReader.onload = function() {
+                    const typedarray = new Uint8Array(this.result);
+                    pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+                        pdfDoc = pdf;
+                        document.getElementById('page-count').textContent = pdf.numPages;
+                        document.getElementById('pdf-doc-title').textContent = file.name;
+                        pageNum = 1;
+                        renderPage(pageNum);
+                        showToast(`Documento "${file.name}" cargado exitosamente.`);
+                    }).catch(err => {
+                        showToast("Error al procesar el archivo PDF.", false);
+                    });
+                };
+                fileReader.readAsArrayBuffer(file);
+            } else {
+                showToast("Por favor seleccione un archivo en formato PDF válido.", false);
+            }
+        });
+
+        // Fallback Vector Mock Document when no external PDF URL is given
+        function renderFallbackCanvas() {
+            canvas.width = 650;
+            canvas.height = 850;
+
+            // Background
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Outer Frame
+            ctx.strokeStyle = "#1e40af";
+            ctx.lineWidth = 4;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+            // Header Banner
+            ctx.fillStyle = "#0f2b5c";
+            ctx.fillRect(20, 20, canvas.width - 40, 110);
+
+            // Title Text
+            ctx.fillStyle = "#ffffff";
+            ctx.font = "bold 26px Inter, sans-serif";
+            ctx.fillText("TORNERÍA DANIEL", 50, 65);
+
+            ctx.fillStyle = "#93c5fd";
+            ctx.font = "14px Inter, sans-serif";
+            ctx.fillText("Catálogo de Servicios & Especificaciones Técnicas", 50, 95);
+
+            // Section 1: La Empresa Text Body
+            ctx.fillStyle = "#1e293b";
+            ctx.font = "bold 16px Inter, sans-serif";
+            ctx.fillText("1. RESUMEN INSTITUCIONAL", 50, 175);
+
+            ctx.fillStyle = "#475569";
+            ctx.font = "12px Inter, sans-serif";
+            const textLines = [
+                "Tornería Daniel es una PyME dedicada a la prestación de servicios de tornería,",
+                "mecanizado y fabricación de piezas a medida, según plano o muestra, para empresas",
+                "y clientes particulares. Con amplia experiencia en el sector, ofrecemos soluciones",
+                "rápidas, confiables y de alta calidad, adaptadas a las necesidades de cada proyecto.",
+                "Trabajamos especialmente para la industria, incluyendo el sector petrolero, brindando",
+                "servicios de mecanizado, reparación y mantenimiento de componentes."
+            ];
+
+            let y = 205;
+            textLines.forEach(line => {
+                ctx.fillText(line, 50, y);
+                y += 22;
+            });
+
+            // Blueprint Graphic Simulation
+            ctx.fillStyle = "#f1f5f9";
+            ctx.fillRect(50, 360, canvas.width - 100, 220);
+            ctx.strokeStyle = "#cbd5e1";
+            ctx.lineWidth = 1;
+            ctx.strokeRect(50, 360, canvas.width - 100, 220);
+
+            // Gear/Piece sketch inside sample
+            ctx.strokeStyle = "#1d4ed8";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, 470, 60, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, 470, 30, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.fillStyle = "#1e40af";
+            ctx.font = "bold 12px monospace";
+            ctx.fillText("ESQUEMA TÉCNICO - FABRICACIÓN A MEDIDA", 70, 390);
+            ctx.fillText("TOLERANCIA: ±0.02 mm", 70, 560);
+
+            // Services Grid Summary in Canvas
+            ctx.fillStyle = "#1e293b";
+            ctx.font = "bold 16px Inter, sans-serif";
+            ctx.fillText("2. SERVICIOS DESTACADOS", 50, 620);
+
+            ctx.font = "12px Inter, sans-serif";
+            ctx.fillStyle = "#334155";
+            ctx.fillText("• Tornería & Mecanizado de Precisión en Torno Convencional", 60, 650);
+            ctx.fillText("• Fabricación de Bujes, Roscas Especiales y Flanges Petroleros", 60, 675);
+            ctx.fillText("• Reconstrucción y Rebanado de Ejes y Alojamientos", 60, 700);
+            ctx.fillText("• Mantenimiento Integral Mecánico", 60, 725);
+
+            // Footer of mock PDF
+            ctx.fillStyle = "#0f2b5c";
+            ctx.fillRect(20, 780, canvas.width - 40, 50);
+
+            ctx.fillStyle = "#ffffff";
+            ctx.font = "12px Inter, sans-serif";
+            ctx.fillText("Contacto WhatsApp: +54 9 2974 76 3196 | Email: silvaguillermo1305@gmail.com", 45, 810);
+        }
+
+        // Initialize PDF Preview
+        window.onload = function() {
+            renderFallbackCanvas();
+        };
+    </script>
+
+</body>
+</html>
