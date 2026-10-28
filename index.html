@@ -154,62 +154,64 @@
     <!-- Main Content -->
     <main class="flex-grow">
 
-        <!-- HERO SECTION WITH BACKGROUND VIDEO & OVERLAY CARD -->
-        <section id="inicio" class="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white py-16">
+        <!-- HERO SECTION WITH BACKGROUND VIDEO & OVERLAY CARD (LEFT ALIGNED) -->
+        <section id="inicio" class="relative min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-slate-950 text-white py-12 lg:py-20">
             
             <!-- Fullscreen Background Video -->
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-40 scale-105 pointer-events-none">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60 scale-105 pointer-events-none object-right">
                 <source src="video.mp4" type="video/mp4">
             </video>
 
-            <!-- Dark Gradient Mask / Semi-transparent Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-brand-900/80 z-10"></div>
+            <!-- Dark Gradient Mask: Darker on left behind card, transparent on right for video visibility -->
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent z-10"></div>
 
-            <!-- Content Presentation Box -->
-            <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                <div class="glass-panel p-8 sm:p-12 rounded-3xl shadow-2xl border border-white/20">
-                    
-                    <!-- Enlarged Logo in Hero Center -->
-                    <div class="flex justify-center mb-6">
-                        <div class="p-2.5 bg-white rounded-2xl shadow-xl border border-white/40">
-                            <img src="logo.jpeg" alt="Logo Tornería Daniel" class="h-24 sm:h-32 w-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f2b5c/ffffff?text=Torneria+Daniel';">
+            <!-- Content Presentation Box (Aligned to the LEFT) -->
+            <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-xl text-left">
+                    <div class="glass-panel p-6 sm:p-10 rounded-3xl shadow-2xl border border-white/20">
+                        
+                        <!-- Logo in Hero -->
+                        <div class="flex justify-start mb-6">
+                            <div class="p-2.5 bg-white rounded-2xl shadow-xl border border-white/40">
+                                <img src="logo.jpeg" alt="Logo Tornería Daniel" class="h-20 sm:h-28 w-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f2b5c/ffffff?text=Torneria+Daniel';">
+                            </div>
                         </div>
+
+                        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white mb-4">
+                            TORNERÍA MECÁNICA DE PRECISIÓN
+                        </h1>
+
+                        <p class="text-base sm:text-xl text-blue-100 font-medium leading-relaxed mb-8">
+                            Tornería mecánica de precisión para el sector petrolero e industrial
+                        </p>
+
+                        <!-- Primary Buttons -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                            <a href="https://wa.me/5492974763196?text=Hola%20Torner%C3%ADa%20Daniel,%20quisiera%20consultar%20por%20un%20servicio%20de%20mecanizado." target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base px-6 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-0.5">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Contactar por WhatsApp</span>
+                            </a>
+
+                            <a href="#catalogo" class="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-5 py-3.5 rounded-2xl border border-white/30 backdrop-blur-md transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pdf text-red-400"></i>
+                                <span>Catálogo del proveedor</span>
+                            </a>
+                        </div>
+
+                        <!-- Highlights Bar -->
+                        <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap justify-start gap-5 text-xs text-slate-300 font-medium">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Calidad Garantizada
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-truck-monster text-blue-400"></i> Servicio 24 hs
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-oil-well text-amber-400"></i> Sector Petrolero & Industrial
+                            </span>
+                        </div>
+
                     </div>
-
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-4">
-                        TORNERÍA MECÁNICA DE PRECISIÓN
-                    </h1>
-
-                    <p class="text-lg sm:text-2xl text-blue-100 font-medium max-w-2xl mx-auto leading-relaxed mb-8">
-                        Tornería mecánica de precisión para el sector petrolero e industrial
-                    </p>
-
-                    <!-- Primary WhatsApp Button Matching Requested Style -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="https://wa.me/5492974763196?text=Hola%20Torner%C3%ADa%20Daniel,%20quisiera%20consultar%20por%20un%20servicio%20de%20mecanizado." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 transform hover:-translate-y-1">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            <span>Contactar por WhatsApp</span>
-                        </a>
-
-                        <a href="#catalogo" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold text-base px-6 py-4 rounded-2xl border border-white/30 backdrop-blur-md transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-file-pdf text-red-400"></i>
-                            <span>Catálogo del proveedor</span>
-                        </a>
-                    </div>
-
-                    <!-- Highlights Bar -->
-                    <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-slate-300 font-medium">
-                        <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-shield-halved text-emerald-400"></i> Calidad Garantizada
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-truck-monster text-blue-400"></i> Servicio 24 hs
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-oil-well text-amber-400"></i> Sector Petrolero & Industrial
-                        </span>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -655,7 +657,7 @@
 
                     </div>
 
-                    <!-- Right: Google Maps with Explicit Red Pin -->
+                    <!-- Right: Google Maps with Explicit Red Pin & Exact Link -->
                     <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between gap-4 mb-4">
@@ -665,16 +667,16 @@
                                     </h3>
                                     <p class="text-xs text-slate-500 mt-0.5">Barrio Malvinas Argentinas - Comodoro Rivadavia</p>
                                 </div>
-                                <a href="https://maps.app.goo.gl/1sFbfKmBsqqjqA9FA" target="_blank" rel="noopener noreferrer" class="bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow transition flex items-center gap-1.5">
+                                <a href="https://maps.app.goo.gl/y4yMz2mAXSzUt4s26" target="_blank" rel="noopener noreferrer" class="bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow transition flex items-center gap-1.5">
                                     <span>Ver en Google Maps</span>
                                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                                 </a>
                             </div>
 
-                            <!-- Embedded Google Map with Red Marker query parameter -->
+                            <!-- Embedded Google Map with Red Marker query on exact address -->
                             <div class="w-full h-96 rounded-2xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative">
                                 <iframe 
-                                    src="https://maps.google.com/maps?q=-45.865,-67.4988888&hl=es&z=16&output=embed" 
+                                    src="https://maps.google.com/maps?q=Ruperto+Rasgido+y+Cjal.+Ricardo+Alcoleas,+Comodoro+Rivadavia,+Chubut&hl=es&z=16&output=embed" 
                                     class="w-full h-full border-0" 
                                     allowfullscreen="" 
                                     loading="lazy" 
@@ -684,8 +686,8 @@
                         </div>
 
                         <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-600">
-                            <span><i class="fa-solid fa-map-pin text-red-500 mr-1"></i> Código Plus: <strong>4CJJ+VC, Comodoro Rivadavia</strong></span>
-                            <span class="font-bold text-brand-800">Tornería Daniel de Daniel Silva</span>
+                            <span><i class="fa-solid fa-map-pin text-red-500 mr-1"></i> Ruperto Rasgido y Cjal. Ricardo Alcoleas, Barrio Malvinas Argentinas</span>
+                            <span class="font-bold text-brand-800">Tornería Daniel</span>
                         </div>
                     </div>
 
